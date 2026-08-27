@@ -17,7 +17,6 @@ body {
     padding: 20px;
 }
 
-/* ===== HEADER ===== */
 header {
     background: #0f0f0f;
     padding: 18px 0;
@@ -100,42 +99,6 @@ nav a.active {
     text-align: center;
 }
 
-/* ===== TABS ===== */
-.tabs {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 24px;
-    border-bottom: 1px solid #222;
-    padding-bottom: 12px;
-}
-.tabs .tab {
-    background: transparent;
-    border: none;
-    color: #888;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 10px 24px;
-    border-radius: 40px;
-    cursor: pointer;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.tabs .tab:hover {
-    color: #fff;
-    background: #1a1a1a;
-}
-.tabs .tab.active {
-    color: #fff;
-    background: #2a2a2a;
-    border: 1px solid #444;
-}
-.tabs .tab i {
-    font-size: 16px;
-}
-
-/* ===== FILTERS ===== */
 .filters {
     display: flex;
     gap: 10px;
@@ -173,30 +136,6 @@ nav a.active {
     color: #fff;
 }
 
-/* ===== SEARCH BAR ===== */
-.search-bar {
-    margin-bottom: 24px;
-}
-.search-bar input {
-    width: 100%;
-    padding: 14px 20px;
-    background: #161616;
-    border: 1px solid #2a2a2a;
-    border-radius: 40px;
-    color: #f0f0f0;
-    font-size: 16px;
-    transition: 0.3s;
-}
-.search-bar input:focus {
-    outline: none;
-    border-color: #555;
-    background: #1a1a1a;
-}
-.search-bar input::placeholder {
-    color: #666;
-}
-
-/* ===== SECTION TITLE ===== */
 .section-title {
     display: flex;
     justify-content: space-between;
@@ -219,14 +158,12 @@ nav a.active {
     border: 1px solid #2a2a2a;
 }
 
-/* ===== PRODUCT GRID ===== */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 24px;
 }
 
-/* ===== PRODUCT CARD ===== */
 .product-card {
     background: #121212;
     border-radius: 20px;
@@ -350,6 +287,7 @@ nav a.active {
     display: flex;
     align-items: baseline;
     gap: 12px;
+    flex-wrap: wrap;
     margin: 6px 0 4px;
 }
 .product-card .price-row .price {
@@ -402,7 +340,6 @@ nav a.active {
     margin-right: 8px;
 }
 
-/* ===== PAGINATION ===== */
 .pagination {
     display: flex;
     justify-content: center;
@@ -432,7 +369,6 @@ nav a.active {
     border-color: #555;
 }
 
-/* ===== FOOTER ===== */
 footer {
     margin-top: 60px;
     padding-top: 30px;
@@ -458,7 +394,7 @@ footer .social-links a {
     margin: 0 12px;
 }
 
-/* ===== CONTACT PAGE ===== */
+/* ===== CONTACT ===== */
 .contact-page {
     max-width: 700px;
     margin: 40px auto;
@@ -529,7 +465,7 @@ footer .social-links a {
     color: #fff;
 }
 
-/* ===== ABOUT PAGE ===== */
+/* ===== ABOUT ===== */
 .about-page {
     max-width: 800px;
     margin: 40px auto;
@@ -567,7 +503,7 @@ footer .social-links a {
     font-size: 14px;
 }
 
-/* ===== CART PAGE ===== */
+/* ===== CART ===== */
 .cart-page {
     max-width: 800px;
     margin: 40px auto;
@@ -650,7 +586,194 @@ footer .social-links a {
     color: #333;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== SUPPORT ===== */
+.support-page {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #121212;
+    padding: 50px 40px;
+    border-radius: 28px;
+    border: 1px solid #222;
+}
+.support-page h1 {
+    font-size: 34px;
+    margin-bottom: 12px;
+    text-align: center;
+    color: #fff;
+}
+.support-page .sub {
+    color: #888;
+    margin-bottom: 32px;
+    text-align: center;
+    font-size: 16px;
+}
+.support-form label {
+    display: block;
+    color: #aaa;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+.support-form input,
+.support-form textarea,
+.support-form select {
+    width: 100%;
+    padding: 12px 16px;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    color: #f0f0f0;
+    font-size: 15px;
+    margin-bottom: 18px;
+    transition: 0.3s;
+    font-family: inherit;
+}
+.support-form input:focus,
+.support-form textarea:focus,
+.support-form select:focus {
+    outline: none;
+    border-color: #555;
+    background: #1f1f1f;
+}
+.support-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+.support-form select option {
+    background: #1a1a1a;
+    color: #f0f0f0;
+}
+.support-form .btn-submit {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: #fff;
+    font-weight: 600;
+    padding: 14px 0;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+    width: 100%;
+}
+.support-form .btn-submit:hover {
+    background: #3a3a3a;
+    border-color: #666;
+}
+.support-form .btn-submit i {
+    margin-right: 8px;
+}
+.chat-success {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+    color: #6aafef;
+}
+.chat-success i {
+    font-size: 60px;
+    margin-bottom: 16px;
+}
+.chat-success h3 {
+    color: #fff;
+    margin-bottom: 8px;
+}
+.chat-success p {
+    color: #888;
+}
+
+/* ===== CUSTOM ===== */
+.custom-page {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #121212;
+    padding: 50px 40px;
+    border-radius: 28px;
+    border: 1px solid #222;
+}
+.custom-page h1 {
+    font-size: 34px;
+    margin-bottom: 12px;
+    text-align: center;
+    color: #fff;
+}
+.custom-page .sub {
+    color: #888;
+    margin-bottom: 32px;
+    text-align: center;
+    font-size: 16px;
+}
+.custom-form label {
+    display: block;
+    color: #aaa;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+.custom-form input,
+.custom-form textarea,
+.custom-form select {
+    width: 100%;
+    padding: 12px 16px;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    color: #f0f0f0;
+    font-size: 15px;
+    margin-bottom: 18px;
+    transition: 0.3s;
+    font-family: inherit;
+}
+.custom-form input:focus,
+.custom-form textarea:focus,
+.custom-form select:focus {
+    outline: none;
+    border-color: #555;
+    background: #1f1f1f;
+}
+.custom-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+.custom-form select option {
+    background: #1a1a1a;
+    color: #f0f0f0;
+}
+.custom-form .btn-submit {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: #fff;
+    font-weight: 600;
+    padding: 14px 0;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+    width: 100%;
+}
+.custom-form .btn-submit:hover {
+    background: #3a3a3a;
+    border-color: #666;
+}
+.custom-form .btn-submit i {
+    margin-right: 8px;
+}
+.custom-success {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+    color: #6aafef;
+}
+.custom-success i {
+    font-size: 60px;
+    margin-bottom: 16px;
+}
+.custom-success h3 {
+    color: #fff;
+    margin-bottom: 8px;
+}
+.custom-success p {
+    color: #888;
+}
+
 @media (max-width: 600px) {
     .header-inner {
         flex-direction: column;
@@ -668,11 +791,9 @@ footer .social-links a {
         height: 180px;
     }
     .contact-page,
-    .about-page {
+    .about-page,
+    .support-page,
+    .custom-page {
         padding: 30px 20px;
-    }
-    .tabs .tab {
-        font-size: 14px;
-        padding: 8px 16px;
     }
 }
