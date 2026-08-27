@@ -1,64 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rynex PC - Contact</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rynex PC — Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">Rynex <span>PC</span></a>
-            <div class="nav-links">
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo">Rynex<span>PC</span></a>
+            <nav>
                 <a href="index.html">Home</a>
+                <a href="about.html">About</a>
                 <a href="builds.html">Builds</a>
-                <a href="custom.html">Custom PC</a>
+                <a href="custom.html">Custom</a>
                 <a href="support.html">Support</a>
                 <a href="contact.html" class="active">Contact</a>
-            </div>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <section class="page-content">
-        <div class="section-header">
-            <h1>Contact Us</h1>
-            <p>We are always available</p>
+    <div class="container">
+        <div class="contact-page">
+            <h1>📬 Get in Touch</h1>
+            <p class="sub">We're here to help you build the perfect PC</p>
+            
+            <div class="contact-item">
+                <div class="icon"><i class="fas fa-envelope"></i></div>
+                <div class="info">
+                    <div class="label">Email</div>
+                    <div class="value"><a href="mailto:info@rynexpc.com">info@rynexpc.com</a></div>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="icon"><i class="fas fa-phone"></i></div>
+                <div class="info">
+                    <div class="label">Phone</div>
+                    <div class="value"><a href="tel:+34123456789">+34 123 456 789</a></div>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="info">
+                    <div class="label">Address</div>
+                    <div class="value">Madrid, Spain</div>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="icon"><i class="fab fa-instagram"></i></div>
+                <div class="info">
+                    <div class="label">Instagram</div>
+                    <div class="value"><a href="#">@rynexpc</a></div>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="icon"><i class="fab fa-youtube"></i></div>
+                <div class="info">
+                    <div class="label">YouTube</div>
+                    <div class="value"><a href="#">Rynex PC</a></div>
+                </div>
+            </div>
         </div>
-        <div class="contact-info">
-            <div class="contact-item">
-                <h4>Email:</h4>
-                <a href="mailto:pcmontaje1@gmail.com">pcmontaje1@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <h4>Phone:</h4>
-                <a href="tel:+34607416282">+34 607 416 282</a>
-            </div>
-            <div class="contact-item">
-                <h4>Working hours:</h4>
-                <p>24/7</p>
-            </div>
-        </div>
-        <form id="contact-form" class="order-form">
-            <div class="form-group">
-                <label>Your Name:</label>
-                <input type="text" id="contact-name" name="name" required placeholder="Enter your name">
-            </div>
-            <div class="form-group">
-                <label>Your Email:</label>
-                <input type="email" id="contact-email" name="email" required placeholder="Enter your email">
-            </div>
-            <div class="form-group">
-                <label>Message:</label>
-                <textarea id="contact-message" name="message" rows="5" placeholder="Your message..."></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-    </section>
+    </div>
 
     <footer>
-        <p>&copy; 2024 Rynex PC. All rights reserved</p>
+        <div class="container">
+            <p>© 2026 Rynex PC. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
