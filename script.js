@@ -1,5 +1,5 @@
 // =============================================
-// 35 PC BUILDS — УНИКАЛЬНЫЕ ФОТО
+// 35 PC BUILDS
 // =============================================
 const allProducts = [
     // BUDGET (4)
@@ -45,10 +45,10 @@ const allProducts = [
 ];
 
 // =============================================
-// МНОГО КОМПОНЕНТОВ (более 100) с уникальными фото
+// 77 КОМПОНЕНТОВ (ПОЛНЫЙ СПИСОК)
 // =============================================
 const allComponents = [
-    // ===== CPU (10 шт) =====
+    // CPU (10)
     { id: 101, name: 'AMD Ryzen 5 5600X', category: 'cpu', price: 199, originalPrice: 249, img: 'https://images.unsplash.com/photo-1591799265444-d66432b9c5a6?w=400&h=300&fit=crop&auto=format' },
     { id: 102, name: 'AMD Ryzen 7 5800X', category: 'cpu', price: 299, originalPrice: 379, img: 'https://images.unsplash.com/photo-1591799265444-d66432b9c5a6?w=400&h=300&fit=crop&auto=format' },
     { id: 103, name: 'AMD Ryzen 9 5900X', category: 'cpu', price: 449, originalPrice: 569, img: 'https://images.unsplash.com/photo-1591799265444-d66432b9c5a6?w=400&h=300&fit=crop&auto=format' },
@@ -59,8 +59,7 @@ const allComponents = [
     { id: 108, name: 'Intel Core i5-12600K', category: 'cpu', price: 289, originalPrice: 359, img: 'https://images.unsplash.com/photo-1591799265444-d66432b9c5a6?w=400&h=300&fit=crop&auto=format' },
     { id: 109, name: 'Intel Core i5-13600K', category: 'cpu', price: 329, originalPrice: 409, img: 'https://images.unsplash.com/photo-1591799265444-d66432b9c5a6?w=400&h=300&fit=crop&auto=format' },
     { id: 110, name: 'AMD Ryzen 9 7950X', category: 'cpu', price: 599, originalPrice: 749, img: 'https://images.unsplash.com/photo-1591799265444-d66432b9c5a6?w=400&h=300&fit=crop&auto=format' },
-
-    // ===== GPU (15 шт) =====
+    // GPU (15)
     { id: 201, name: 'NVIDIA RTX 3060 12GB', category: 'gpu', price: 349, originalPrice: 429, img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
     { id: 202, name: 'NVIDIA RTX 4060 8GB', category: 'gpu', price: 499, originalPrice: 629, img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
     { id: 203, name: 'NVIDIA RTX 4070 12GB', category: 'gpu', price: 599, originalPrice: 749, img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
@@ -76,8 +75,7 @@ const allComponents = [
     { id: 213, name: 'AMD RX 7900 GRE 16GB', category: 'gpu', price: 599, originalPrice: 769, img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
     { id: 214, name: 'AMD RX 7900 XT 20GB', category: 'gpu', price: 799, originalPrice: 999, img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
     { id: 215, name: 'AMD RX 7900 XTX 24GB', category: 'gpu', price: 999, originalPrice: 1299, img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
-
-    // ===== RAM (12 шт) =====
+    // RAM (12)
     { id: 301, name: 'Corsair Vengeance 16GB DDR4 3200MHz', category: 'ram', price: 79, originalPrice: 99, img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=400&h=300&fit=crop&auto=format' },
     { id: 302, name: 'Corsair Vengeance 32GB DDR4 3600MHz', category: 'ram', price: 149, originalPrice: 189, img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=400&h=300&fit=crop&auto=format' },
     { id: 303, name: 'G.Skill Trident Z5 32GB DDR5 6000MHz', category: 'ram', price: 199, originalPrice: 249, img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=400&h=300&fit=crop&auto=format' },
@@ -90,8 +88,7 @@ const allComponents = [
     { id: 310, name: 'TeamGroup T-Force Vulcan 32GB DDR5 6000MHz', category: 'ram', price: 179, originalPrice: 229, img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=400&h=300&fit=crop&auto=format' },
     { id: 311, name: 'Corsair Dominator Platinum 64GB DDR5 6000MHz', category: 'ram', price: 449, originalPrice: 569, img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=400&h=300&fit=crop&auto=format' },
     { id: 312, name: 'G.Skill Ripjaws V 16GB DDR4 3200MHz', category: 'ram', price: 69, originalPrice: 89, img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=400&h=300&fit=crop&auto=format' },
-
-    // ===== Storage (10 шт) =====
+    // Storage (10)
     { id: 401, name: 'Samsung 980 500GB NVMe SSD', category: 'storage', price: 59, originalPrice: 79, img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400&h=300&fit=crop&auto=format' },
     { id: 402, name: 'Samsung 980 1TB NVMe SSD', category: 'storage', price: 109, originalPrice: 139, img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400&h=300&fit=crop&auto=format' },
     { id: 403, name: 'Samsung 990 Pro 2TB NVMe SSD', category: 'storage', price: 229, originalPrice: 289, img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400&h=300&fit=crop&auto=format' },
@@ -102,8 +99,7 @@ const allComponents = [
     { id: 408, name: 'Crucial P5 Plus 1TB NVMe SSD', category: 'storage', price: 89, originalPrice: 119, img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400&h=300&fit=crop&auto=format' },
     { id: 409, name: 'Seagate BarraCuda 2TB 3.5" HDD', category: 'storage', price: 59, originalPrice: 79, img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400&h=300&fit=crop&auto=format' },
     { id: 410, name: 'Seagate BarraCuda 4TB 3.5" HDD', category: 'storage', price: 89, originalPrice: 119, img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400&h=300&fit=crop&auto=format' },
-
-    // ===== Motherboard (10 шт) =====
+    // Motherboard (10)
     { id: 501, name: 'ASUS ROG Strix B550-F Gaming', category: 'motherboard', price: 189, originalPrice: 239, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
     { id: 502, name: 'MSI MAG Z690 Tomahawk WiFi', category: 'motherboard', price: 269, originalPrice: 339, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
     { id: 503, name: 'ASUS ROG Maximus Z790 Hero', category: 'motherboard', price: 499, originalPrice: 629, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
@@ -114,8 +110,7 @@ const allComponents = [
     { id: 508, name: 'Gigabyte B760M DS3H', category: 'motherboard', price: 139, originalPrice: 169, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
     { id: 509, name: 'ASRock Z790 Pro RS', category: 'motherboard', price: 219, originalPrice: 269, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
     { id: 510, name: 'MSI MAG B550 Tomahawk', category: 'motherboard', price: 189, originalPrice: 239, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
-
-    // ===== PSU (10 шт) =====
+    // PSU (10)
     { id: 601, name: 'Corsair RM750x 750W Gold', category: 'psu', price: 129, originalPrice: 169, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
     { id: 602, name: 'Corsair RM850x 850W Gold', category: 'psu', price: 159, originalPrice: 209, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
     { id: 603, name: 'Seasonic Prime TX-1000 1000W Titanium', category: 'psu', price: 329, originalPrice: 429, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
@@ -126,8 +121,7 @@ const allComponents = [
     { id: 608, name: 'EVGA 650 B5 650W Bronze', category: 'psu', price: 89, originalPrice: 119, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
     { id: 609, name: 'Be Quiet! Dark Power 13 1000W', category: 'psu', price: 279, originalPrice: 349, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
     { id: 610, name: 'Corsair RM1000x 1000W Gold', category: 'psu', price: 199, originalPrice: 249, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
-
-    // ===== Case (10 шт) =====
+    // Case (10)
     { id: 701, name: 'NZXT H510 Elite', category: 'case', price: 149, originalPrice: 189, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
     { id: 702, name: 'Lian Li PC-O11 Dynamic', category: 'case', price: 159, originalPrice: 199, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
     { id: 703, name: 'Corsair 5000D Airflow', category: 'case', price: 169, originalPrice: 219, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
@@ -138,8 +132,7 @@ const allComponents = [
     { id: 708, name: 'Lian Li Lancool II Mesh', category: 'case', price: 119, originalPrice: 149, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
     { id: 709, name: 'Fractal Design Define 7', category: 'case', price: 159, originalPrice: 199, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
     { id: 710, name: 'Phanteks Eclipse G360A', category: 'case', price: 109, originalPrice: 139, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
-
-    // ===== Cooling (10 шт) =====
+    // Cooling (10)
     { id: 801, name: 'NZXT Kraken X63 280mm AIO', category: 'cooling', price: 149, originalPrice: 189, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
     { id: 802, name: 'Corsair iCUE H150i Elite 360mm AIO', category: 'cooling', price: 179, originalPrice: 229, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
     { id: 803, name: 'Noctua NH-D15 Air Cooler', category: 'cooling', price: 99, originalPrice: 129, img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
@@ -153,7 +146,7 @@ const allComponents = [
 ];
 
 // =============================================
-// ПОИСК ПО КОМПОНЕНТАМ + ДИНАМИЧЕСКОЕ СОЗДАНИЕ ПОЛЯ
+// ПОИСК ПО КОМПОНЕНТАМ
 // =============================================
 let componentSearchQuery = '';
 
@@ -163,27 +156,6 @@ function searchComponents() {
         componentSearchQuery = input.value.toLowerCase().trim();
         currentComponentPage = 1;
         renderComponents();
-    }
-}
-
-// Если поля поиска нет в HTML — создаём его
-function ensureSearchBar() {
-    const container = document.querySelector('.container');
-    if (!container) return;
-    let searchBar = document.getElementById('componentSearch');
-    if (!searchBar) {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'search-bar';
-        wrapper.innerHTML = `
-            <input type="text" id="componentSearch" placeholder="🔍 Search components by name..." oninput="searchComponents()" />
-        `;
-        // Вставляем перед фильтрами
-        const filters = document.getElementById('componentFilterContainer');
-        if (filters) {
-            container.insertBefore(wrapper, filters);
-        } else {
-            container.prepend(wrapper);
-        }
     }
 }
 
@@ -466,9 +438,6 @@ function goToComponentPage(page) {
 // INIT
 // =============================================
 document.addEventListener('DOMContentLoaded', function() {
-    // Создаём поиск, если его нет
-    ensureSearchBar();
-
     updateCartCount();
 
     // Home page
