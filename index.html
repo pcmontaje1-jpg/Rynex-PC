@@ -17,48 +17,41 @@
                 <a href="contact.html">Contact</a>
                 <a href="cart.html" class="cart-icon">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
+                    <span class="cart-count" id="cartCount">0</span>
                 </a>
             </nav>
         </div>
     </header>
 
     <div class="container">
-        <!-- Filters (exactly like your screenshot, but in English) -->
-        <div class="filters">
-            <span class="pill active"><i class="fas fa-chevron-left"></i> Dessert</span>
-            <span class="pill">Dessert</span>
-            <span class="pill"><i class="fas fa-gamepad"></i> Gaming</span>
-            <span class="pill"><i class="fas fa-home"></i> Home Use</span>
-            <span class="pill"><i class="fas fa-star"></i> Advanced Gaming</span>
-            <span class="pill"><i class="fas fa-briefcase"></i> Professional</span>
+        <!-- Filters -->
+        <div class="filters" id="filterContainer">
+            <span class="pill active" data-filter="all"><i class="fas fa-th-list"></i> All</span>
+            <span class="pill" data-filter="dessert"><i class="fas fa-chevron-left"></i> Dessert</span>
+            <span class="pill" data-filter="gaming"><i class="fas fa-gamepad"></i> Gaming</span>
+            <span class="pill" data-filter="home"><i class="fas fa-home"></i> Home Use</span>
+            <span class="pill" data-filter="advanced"><i class="fas fa-star"></i> Advanced</span>
+            <span class="pill" data-filter="professional"><i class="fas fa-briefcase"></i> Professional</span>
         </div>
 
         <div class="section-title">
             <h2>Rynex Builds</h2>
-            <span class="badge">🔥 12 models</span>
+            <span class="badge" id="totalBadge">🔥 24 models</span>
         </div>
 
-        <div class="product-grid" id="productGrid">
-            <!-- Cards will be inserted via JS -->
-        </div>
+        <div class="product-grid" id="productGrid"></div>
 
-        <div class="pagination">
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">→</a>
-        </div>
+        <div class="pagination" id="pagination"></div>
     </div>
 
     <footer>
         <div class="container">
             <p>© 2026 Rynex PC. All rights reserved.</p>
-            <p>
+            <div class="social-links">
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-youtube"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
-            </p>
+            </div>
         </div>
     </footer>
 
