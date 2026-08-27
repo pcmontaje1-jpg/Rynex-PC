@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rynex PC — About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about-content {
+            background: #141414;
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid #2a2a2a;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .about-content h1 { font-size: 32px; margin-bottom: 16px; }
+        .about-content p {
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .about-content .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .about-content .stats div { text-align: center; }
+        .about-content .stats .num { font-size: 28px; font-weight: 700; color: #f0f0f0; }
+        .about-content .stats .label { color: #888; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo">Rynex<span>PC</span></a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="about-content">
+            <h1>🚀 Rynex PC</h1>
+            <p>We build powerful and stylish gaming PCs with liquid cooling. Every build undergoes strict quality control and testing.</p>
+            <div class="stats">
+                <div><div class="num">12+</div><div class="label">Builds</div></div>
+                <div><div class="num">1500+</div><div class="label">Customers</div></div>
+                <div><div class="num">4.8</div><div class="label">Avg Rating</div></div>
+            </div>
+            <p>We use only premium components from leading brands. Our PCs are the perfect balance of price and performance.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Rynex PC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
