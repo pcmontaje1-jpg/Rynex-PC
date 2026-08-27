@@ -1,43 +1,134 @@
-const products = [
-    { id: 1, name: 'Rynex Mini Ryzen 3 3100 / 8GB / 256GB SSD / GT 1030', price: 99, rating: 4.2, reviews: 34, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
-    { id: 2, name: 'Rynex Core i3-12100F / 16GB / 512GB SSD / RX 6600', price: 349, rating: 4.5, reviews: 89, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
-    { id: 3, name: 'Rynex Ryzen 5 5600X / 16GB / 1TB SSD / RTX 3060', price: 649, rating: 4.7, reviews: 156, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
-    { id: 4, name: 'Rynex Ryzen 7 5700X / 32GB / 1TB SSD / RTX 4060', price: 949, rating: 4.8, reviews: 210, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
-    { id: 5, name: 'Rynex Ryzen 7 5800X / 32GB / 1TB NVMe / RTX 4070', price: 1249, rating: 4.9, reviews: 312, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
-    { id: 6, name: 'Rynex Imperial Ryzen 7 5700X / 32GB / 1TB SSD / RTX 5070', price: 1699, rating: 4.6, reviews: 523, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
-    { id: 7, name: 'Rynex Ryzen 9 5900X / 64GB / 2TB NVMe / RTX 5070 Ti', price: 2199, rating: 4.8, reviews: 178, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
-    { id: 8, name: 'Rynex Core i7-13700K / 64GB / 2TB SSD / RTX 5080', price: 3099, rating: 4.9, reviews: 96, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
-    { id: 9, name: 'Rynex Ryzen 9 7950X / 128GB / 4TB NVMe / RTX 5090', price: 4499, rating: 5.0, reviews: 43, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
-    { id: 10, name: 'Rynex Core i9-14900KS / 128GB / 4TB SSD / RTX 5090 Ti', price: 6199, rating: 4.9, reviews: 27, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
-    { id: 11, name: 'Rynex Threadripper 7980X / 256GB / 8TB NVMe / RTX 5090 Ti', price: 7999, rating: 5.0, reviews: 12, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
-    { id: 12, name: 'Rynex Ultimate Dual RTX 5090 / Threadripper / 256GB', price: 9999, rating: 5.0, reviews: 8, img: 'https://via.placeholder.com/400x300/222/666?text=PC' }
+// ===== 24 PRODUCTS with real PC photos =====
+const allProducts = [
+    // Entry level (Dessert)
+    { id: 1, name: 'Rynex Mini', cpu: 'AMD Ryzen 3 3100', ram: '8GB DDR4', storage: '256GB SSD', gpu: 'GT 1030', price: 99, rating: 4.2, reviews: 34, category: 'dessert', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
+    { id: 2, name: 'Rynex Core', cpu: 'Intel Core i3-12100F', ram: '16GB DDR4', storage: '512GB SSD', gpu: 'RX 6600', price: 349, rating: 4.5, reviews: 89, category: 'dessert', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
+    { id: 3, name: 'Rynex Lite', cpu: 'AMD Ryzen 5 4500', ram: '16GB DDR4', storage: '512GB SSD', gpu: 'GTX 1650', price: 449, rating: 4.3, reviews: 67, category: 'dessert', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' },
+    { id: 4, name: 'Rynex Starter', cpu: 'Intel Core i5-11400F', ram: '16GB DDR4', storage: '512GB SSD', gpu: 'RX 6500 XT', price: 549, rating: 4.4, reviews: 112, category: 'dessert', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
+
+    // Gaming
+    { id: 5, name: 'Rynex Gamer', cpu: 'AMD Ryzen 5 5600X', ram: '16GB DDR4', storage: '1TB SSD', gpu: 'RTX 3060', price: 649, rating: 4.7, reviews: 156, category: 'gaming', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
+    { id: 6, name: 'Rynex Play', cpu: 'Intel Core i5-12400F', ram: '16GB DDR4', storage: '1TB SSD', gpu: 'RTX 3060 Ti', price: 799, rating: 4.8, reviews: 203, category: 'gaming', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' },
+    { id: 7, name: 'Rynex Pro', cpu: 'AMD Ryzen 7 5700X', ram: '32GB DDR4', storage: '1TB SSD', gpu: 'RTX 4060', price: 949, rating: 4.8, reviews: 210, category: 'gaming', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
+    { id: 8, name: 'Rynex Performance', cpu: 'AMD Ryzen 7 5800X', ram: '32GB DDR4', storage: '1TB NVMe', gpu: 'RTX 4070', price: 1249, rating: 4.9, reviews: 312, category: 'gaming', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
+
+    // Home Use
+    { id: 9, name: 'Rynex Home', cpu: 'AMD Ryzen 5 5500', ram: '16GB DDR4', storage: '512GB SSD', gpu: 'GTX 1660', price: 499, rating: 4.5, reviews: 89, category: 'home', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' },
+    { id: 10, name: 'Rynex Family', cpu: 'Intel Core i5-11400', ram: '16GB DDR4', storage: '1TB SSD', gpu: 'RTX 3050', price: 599, rating: 4.6, reviews: 134, category: 'home', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
+    { id: 11, name: 'Rynex Studio', cpu: 'AMD Ryzen 7 5700G', ram: '32GB DDR4', storage: '1TB SSD', gpu: 'RTX 4060', price: 899, rating: 4.7, reviews: 167, category: 'home', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
+    { id: 12, name: 'Rynex Creator', cpu: 'Intel Core i7-12700', ram: '32GB DDR4', storage: '2TB SSD', gpu: 'RTX 4070', price: 1299, rating: 4.8, reviews: 198, category: 'home', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' },
+
+    // Advanced Gaming
+    { id: 13, name: 'Rynex Imperial', cpu: 'AMD Ryzen 7 5700X', ram: '32GB DDR4', storage: '1TB SSD', gpu: 'RTX 5070', price: 1699, rating: 4.6, reviews: 523, category: 'advanced', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
+    { id: 14, name: 'Rynex Elite', cpu: 'AMD Ryzen 9 5900X', ram: '64GB DDR4', storage: '2TB NVMe', gpu: 'RTX 5070 Ti', price: 2199, rating: 4.8, reviews: 178, category: 'advanced', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
+    { id: 15, name: 'Rynex Titan', cpu: 'Intel Core i7-13700K', ram: '64GB DDR5', storage: '2TB SSD', gpu: 'RTX 5080', price: 3099, rating: 4.9, reviews: 96, category: 'advanced', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' },
+    { id: 16, name: 'Rynex Dominator', cpu: 'AMD Ryzen 9 7950X', ram: '64GB DDR5', storage: '2TB NVMe', gpu: 'RTX 5090', price: 3999, rating: 4.9, reviews: 67, category: 'advanced', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
+
+    // Professional
+    { id: 17, name: 'Rynex Workstation', cpu: 'AMD Ryzen 9 7900X', ram: '64GB DDR5', storage: '2TB SSD', gpu: 'RTX 4080', price: 2599, rating: 4.8, reviews: 145, category: 'professional', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
+    { id: 18, name: 'Rynex Render', cpu: 'Intel Core i9-13900K', ram: '128GB DDR5', storage: '4TB SSD', gpu: 'RTX 5090', price: 4499, rating: 4.9, reviews: 89, category: 'professional', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' },
+    { id: 19, name: 'Rynex AI', cpu: 'AMD Threadripper 7960X', ram: '128GB DDR5', storage: '4TB NVMe', gpu: 'RTX 5090 Ti', price: 6499, rating: 4.9, reviews: 54, category: 'professional', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
+    { id: 20, name: 'Rynex Ultimate', cpu: 'AMD Threadripper 7980X', ram: '256GB DDR5', storage: '8TB NVMe', gpu: 'RTX 5090 Ti', price: 7999, rating: 5.0, reviews: 23, category: 'professional', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
+    { id: 21, name: 'Rynex Dual GPU', cpu: 'AMD Threadripper 7980X', ram: '256GB DDR5', storage: '8TB NVMe', gpu: 'Dual RTX 5090', price: 8999, rating: 5.0, reviews: 15, category: 'professional', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' },
+    { id: 22, name: 'Rynex Quantum', cpu: 'Intel Xeon W9-3495X', ram: '256GB DDR5', storage: '8TB NVMe', gpu: 'Dual RTX 5090', price: 9999, rating: 5.0, reviews: 8, category: 'professional', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
+    { id: 23, name: 'Rynex Supernova', cpu: 'AMD Threadripper 7995WX', ram: '512GB DDR5', storage: '12TB NVMe', gpu: 'Dual RTX 5090', price: 11999, rating: 5.0, reviews: 5, category: 'professional', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
+    { id: 24, name: 'Rynex Nebula', cpu: 'AMD Threadripper 7995WX', ram: '512GB DDR5', storage: '16TB NVMe', gpu: 'Quad RTX 5090', price: 14999, rating: 5.0, reviews: 3, category: 'professional', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' }
 ];
 
+// ===== STATE =====
+let currentFilter = 'all';
+let currentPage = 1;
+const itemsPerPage = 4;
+
+// ===== RENDER =====
 function renderProducts() {
+    const filtered = currentFilter === 'all' 
+        ? allProducts 
+        : allProducts.filter(p => p.category === currentFilter);
+    
+    const total = filtered.length;
+    const totalPages = Math.ceil(total / itemsPerPage);
+    if (currentPage > totalPages) currentPage = Math.max(1, totalPages);
+    
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    const pageItems = filtered.slice(start, end);
+    
     const grid = document.getElementById('productGrid');
-    grid.innerHTML = products.map(p => `
+    grid.innerHTML = pageItems.map(p => `
         <div class="product-card">
             <div class="img-box">
-                <img src="${p.img}" alt="${p.name}">
+                <img src="${p.img}" alt="${p.name}" loading="lazy">
             </div>
             <span class="tag water"><i class="fas fa-droplet"></i> Liquid Cooling</span>
+            <span class="cpu-badge"><i class="fas fa-microchip"></i> ${p.cpu}</span>
             <h3>${p.name}</h3>
             <div class="rating">
-                <i class="fas fa-star"></i> ${p.rating} <span>${p.reviews} reviews</span>
+                <i class="fas fa-star"></i> ${p.rating} <span>(${p.reviews} reviews)</span>
+            </div>
+            <div class="specs-line">
+                <span><i class="fas fa-memory"></i> ${p.ram}</span>
+                <span><i class="fas fa-hdd"></i> ${p.storage}</span>
+                <span><i class="fas fa-tv"></i> ${p.gpu}</span>
             </div>
             <div class="price">${p.price.toLocaleString()} €</div>
             <div class="delivery"><i class="fas fa-truck"></i> Free · tomorrow</div>
-            <a href="product.html?id=${p.id}" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Select</a>
+            <button class="btn btn-primary" onclick="addToCart(${p.id})">
+                <i class="fas fa-cart-plus"></i> Select
+            </button>
         </div>
-    `).join('');
+    `).join('') || '<p style="color:#666; text-align:center; padding:40px;">No products found</p>';
+    
+    document.getElementById('totalBadge').textContent = `🔥 ${total} models`;
+    renderPagination(totalPages);
+    updateCartCount();
 }
 
-renderProducts();
-
-let cartCount = 0;
-document.addEventListener('click', (e) => {
-    if (e.target.closest('.btn-primary')) {
-        cartCount++;
-        document.querySelector('.cart-count').textContent = cartCount;
+// ===== PAGINATION =====
+function renderPagination(totalPages) {
+    const container = document.getElementById('pagination');
+    if (totalPages <= 1) { container.innerHTML = ''; return; }
+    
+    let html = '';
+    for (let i = 1; i <= totalPages; i++) {
+        html += `<a class="${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</a>`;
     }
+    container.innerHTML = html;
+}
+
+function goToPage(page) {
+    currentPage = page;
+    renderProducts();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ===== FILTERS =====
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.filters .pill').forEach(pill => {
+        pill.addEventListener('click', function() {
+            document.querySelectorAll('.filters .pill').forEach(p => p.classList.remove('active'));
+            this.classList.add('active');
+            currentFilter = this.dataset.filter;
+            currentPage = 1;
+            renderProducts();
+        });
+    });
+    renderProducts();
 });
+
+// ===== CART =====
+function getCart() {
+    return JSON.parse(localStorage.getItem('rynexCart')) || [];
+}
+
+function saveCart(cart) {
+    localStorage.setItem('rynexCart', JSON.stringify(cart));
+    updateCartCount();
+}
+
+function addToCart(id) {
+    const product = allProducts.find(p => p.id === id);
+    if (!product) return;
+    
+    const cart = getCart();
+    const existing = cart.find(item => item.id === id);
