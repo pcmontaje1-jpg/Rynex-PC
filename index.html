@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rynex PC — Gaming PCs</title>
+    <title>Rynex PC — Gaming PCs & Components</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -15,6 +15,7 @@
                 <a href="index.html" class="active">Home</a>
                 <a href="about.html">About</a>
                 <a href="builds.html">Builds</a>
+                <a href="components.html">Components</a>
                 <a href="custom.html">Custom</a>
                 <a href="support.html">Support</a>
                 <a href="contact.html">Contact</a>
@@ -27,23 +28,35 @@
     </header>
 
     <div class="container">
-        <!-- Filters -->
+        <!-- Tabs -->
+        <div class="tabs" id="tabContainer">
+            <button class="tab active" data-tab="builds"><i class="fas fa-desktop"></i> PC Builds</button>
+            <button class="tab" data-tab="components"><i class="fas fa-microchip"></i> Components</button>
+        </div>
+
+        <!-- Filters for Builds -->
         <div class="filters" id="filterContainer">
             <span class="pill active" data-filter="all"><i class="fas fa-th-list"></i> All</span>
-            <span class="pill" data-filter="dessert"><i class="fas fa-chevron-left"></i> Dessert</span>
+            <span class="pill" data-filter="budget"><i class="fas fa-coins"></i> Budget</span>
             <span class="pill" data-filter="gaming"><i class="fas fa-gamepad"></i> Gaming</span>
-            <span class="pill" data-filter="home"><i class="fas fa-home"></i> Home Use</span>
+            <span class="pill" data-filter="home"><i class="fas fa-home"></i> Home</span>
             <span class="pill" data-filter="advanced"><i class="fas fa-star"></i> Advanced</span>
             <span class="pill" data-filter="professional"><i class="fas fa-briefcase"></i> Professional</span>
         </div>
 
+        <!-- Search for Components -->
+        <div class="search-bar" id="searchBar" style="display:none;">
+            <input type="text" id="componentSearch" placeholder="Search for components... (CPU, GPU, RAM, SSD, etc.)" onkeyup="searchComponents()" />
+        </div>
+
         <div class="section-title">
-            <h2>Rynex Builds</h2>
-            <span class="badge" id="totalBadge">🔥 24 models</span>
+            <h2 id="sectionTitle">Rynex Builds</h2>
+            <span class="badge" id="totalBadge">🔥 30 models</span>
         </div>
 
         <div class="product-grid" id="productGrid"></div>
 
+        <!-- Pagination -->
         <div class="pagination" id="pagination"></div>
     </div>
 
