@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rynex PC — Components</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo">Rynex<span>PC</span></a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="builds.html">Builds</a>
+                <a href="components.html" class="active">Components</a>
+                <a href="custom.html">Custom</a>
+                <a href="support.html">Support</a>
+                <a href="contact.html">Contact</a>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="filters" id="componentFilterContainer">
+            <span class="pill active" data-filter="all"><i class="fas fa-th-list"></i> All</span>
+            <span class="pill" data-filter="cpu"><i class="fas fa-microchip"></i> CPU</span>
+            <span class="pill" data-filter="gpu"><i class="fas fa-tv"></i> GPU</span>
+            <span class="pill" data-filter="ram"><i class="fas fa-memory"></i> RAM</span>
+            <span class="pill" data-filter="storage"><i class="fas fa-hdd"></i> Storage</span>
+            <span class="pill" data-filter="motherboard"><i class="fas fa-server"></i> Motherboard</span>
+            <span class="pill" data-filter="psu"><i class="fas fa-plug"></i> PSU</span>
+            <span class="pill" data-filter="case"><i class="fas fa-box"></i> Case</span>
+            <span class="pill" data-filter="cooling"><i class="fas fa-fan"></i> Cooling</span>
+        </div>
+
+        <div class="section-title">
+            <h2>PC Components</h2>
+            <span class="badge" id="componentBadge">🔥 32 items</span>
+        </div>
+
+        <div class="product-grid" id="componentGrid"></div>
+        <div class="pagination" id="componentPagination"></div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Rynex PC. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
