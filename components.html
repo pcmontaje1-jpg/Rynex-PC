@@ -28,26 +28,27 @@
     </header>
 
     <div class="container">
-        <!-- ПОИСК -->
-        <div class="search-bar">
-            <input type="text" id="componentSearch" placeholder="🔍 Search components by name..." oninput="searchComponents()" />
-        </div>
-
-        <div class="filters" id="componentFilterContainer">
-            <span class="pill active" data-filter="all"><i class="fas fa-th-list"></i> All</span>
-            <span class="pill" data-filter="cpu"><i class="fas fa-microchip"></i> CPU</span>
-            <span class="pill" data-filter="gpu"><i class="fas fa-tv"></i> GPU</span>
-            <span class="pill" data-filter="ram"><i class="fas fa-memory"></i> RAM</span>
-            <span class="pill" data-filter="storage"><i class="fas fa-hdd"></i> Storage</span>
-            <span class="pill" data-filter="motherboard"><i class="fas fa-server"></i> Motherboard</span>
-            <span class="pill" data-filter="psu"><i class="fas fa-plug"></i> PSU</span>
-            <span class="pill" data-filter="case"><i class="fas fa-box"></i> Case</span>
-            <span class="pill" data-filter="cooling"><i class="fas fa-fan"></i> Cooling</span>
+        <!-- ПОИСК В ЛЕВОМ УГЛУ (рядом с фильтрами) -->
+        <div class="search-and-filters">
+            <div class="search-bar">
+                <input type="text" id="componentSearch" placeholder="🔍 Search components..." oninput="searchComponents()" />
+            </div>
+            <div class="filters" id="componentFilterContainer">
+                <span class="pill active" data-filter="all"><i class="fas fa-th-list"></i> All</span>
+                <span class="pill" data-filter="cpu"><i class="fas fa-microchip"></i> CPU</span>
+                <span class="pill" data-filter="gpu"><i class="fas fa-tv"></i> GPU</span>
+                <span class="pill" data-filter="ram"><i class="fas fa-memory"></i> RAM</span>
+                <span class="pill" data-filter="storage"><i class="fas fa-hdd"></i> Storage</span>
+                <span class="pill" data-filter="motherboard"><i class="fas fa-server"></i> Motherboard</span>
+                <span class="pill" data-filter="psu"><i class="fas fa-plug"></i> PSU</span>
+                <span class="pill" data-filter="case"><i class="fas fa-box"></i> Case</span>
+                <span class="pill" data-filter="cooling"><i class="fas fa-fan"></i> Cooling</span>
+            </div>
         </div>
 
         <div class="section-title">
             <h2>PC Components</h2>
-            <span class="badge" id="componentBadge">🔥 32 items</span>
+            <span class="badge" id="componentBadge">🔥 100+ items</span>
         </div>
 
         <div class="product-grid" id="componentGrid"></div>
