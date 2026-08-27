@@ -17,7 +17,7 @@ body {
     padding: 20px;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header {
     background: #0f0f0f;
     padding: 18px 0;
@@ -100,7 +100,7 @@ nav a.active {
     text-align: center;
 }
 
-/* ===== FILTERS ===== */
+/* FILTERS */
 .filters {
     display: flex;
     gap: 10px;
@@ -138,7 +138,7 @@ nav a.active {
     color: #fff;
 }
 
-/* ===== SECTION TITLE ===== */
+/* SECTION TITLE */
 .section-title {
     display: flex;
     justify-content: space-between;
@@ -161,14 +161,14 @@ nav a.active {
     border: 1px solid #2a2a2a;
 }
 
-/* ===== PRODUCT GRID ===== */
+/* PRODUCT GRID */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 24px;
 }
 
-/* ===== PRODUCT CARD ===== */
+/* PRODUCT CARD */
 .product-card {
     background: #121212;
     border-radius: 20px;
@@ -317,7 +317,7 @@ nav a.active {
     margin-right: 8px;
 }
 
-/* ===== PAGINATION ===== */
+/* PAGINATION */
 .pagination {
     display: flex;
     justify-content: center;
@@ -347,7 +347,7 @@ nav a.active {
     border-color: #555;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer {
     margin-top: 60px;
     padding-top: 30px;
@@ -373,7 +373,7 @@ footer .social-links a {
     margin: 0 12px;
 }
 
-/* ===== CONTACT PAGE (в стиле сайта) ===== */
+/* CONTACT */
 .contact-page {
     max-width: 700px;
     margin: 40px auto;
@@ -444,7 +444,7 @@ footer .social-links a {
     color: #fff;
 }
 
-/* ===== ABOUT PAGE ===== */
+/* ABOUT */
 .about-page {
     max-width: 800px;
     margin: 40px auto;
@@ -482,7 +482,7 @@ footer .social-links a {
     font-size: 14px;
 }
 
-/* ===== CART PAGE ===== */
+/* CART */
 .cart-page {
     max-width: 800px;
     margin: 40px auto;
@@ -565,7 +565,7 @@ footer .social-links a {
     color: #333;
 }
 
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
 @media (max-width: 600px) {
     .header-inner {
         flex-direction: column;
