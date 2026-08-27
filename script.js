@@ -1,6 +1,6 @@
-// ===== 24 PRODUCTS with real PC photos =====
+// ===== 24 PRODUCTS with REAL PC photos =====
 const allProducts = [
-    // Entry level (Dessert)
+    // Dessert (entry level)
     { id: 1, name: 'Rynex Mini', cpu: 'AMD Ryzen 3 3100', ram: '8GB DDR4', storage: '256GB SSD', gpu: 'GT 1030', price: 99, rating: 4.2, reviews: 34, category: 'dessert', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
     { id: 2, name: 'Rynex Core', cpu: 'Intel Core i3-12100F', ram: '16GB DDR4', storage: '512GB SSD', gpu: 'RX 6600', price: 349, rating: 4.5, reviews: 89, category: 'dessert', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
     { id: 3, name: 'Rynex Lite', cpu: 'AMD Ryzen 5 4500', ram: '16GB DDR4', storage: '512GB SSD', gpu: 'GTX 1650', price: 449, rating: 4.3, reviews: 67, category: 'dessert', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' },
@@ -40,7 +40,7 @@ let currentFilter = 'all';
 let currentPage = 1;
 const itemsPerPage = 4;
 
-// ===== RENDER =====
+// ===== RENDER PRODUCTS =====
 function renderProducts() {
     const filtered = currentFilter === 'all' 
         ? allProducts 
@@ -55,29 +55,32 @@ function renderProducts() {
     const pageItems = filtered.slice(start, end);
     
     const grid = document.getElementById('productGrid');
-    grid.innerHTML = pageItems.map(p => `
-        <div class="product-card">
-            <div class="img-box">
-                <img src="${p.img}" alt="${p.name}" loading="lazy">
+    if (pageItems.length === 0) {
+        grid.innerHTML = '<p style="color:#666; text-align:center; padding:40px; width:100%;">No products found</p>';
+    } else {
+        grid.innerHTML = pageItems.map(p => `
+            <div class="product-card">
+                <div class="img-box">
+                    <img src="${p.img}" alt="${p.name}" loading="lazy" />
+                </div>
+                <span class="tag water"><i class="fas fa-droplet"></i> Liquid Cooling</span>
+                <span class="cpu-badge"><i class="fas fa-microchip"></i> ${p.cpu}</span>
+                <h3>${p.name}</h3>
+                <div class="rating">
+                    <i class="fas fa-star"></i> ${p.rating} <span>(${p.reviews} reviews)</span>
+                </div>
+                <div class="specs-line">
+                    <span><i class="fas fa-memory"></i> ${p.ram}</span>
+                    <span><i class="fas fa-hdd"></i> ${p.storage}</span>
+                    <span><i class="fas fa-tv"></i> ${p.gpu}</span>
+                </div>
+                <div class="price">${p.price.toLocaleString()} €</div>
+                <button class="btn btn-primary" onclick="addToCart(${p.id})">
+                    <i class="fas fa-cart-plus"></i> Select
+                </button>
             </div>
-            <span class="tag water"><i class="fas fa-droplet"></i> Liquid Cooling</span>
-            <span class="cpu-badge"><i class="fas fa-microchip"></i> ${p.cpu}</span>
-            <h3>${p.name}</h3>
-            <div class="rating">
-                <i class="fas fa-star"></i> ${p.rating} <span>(${p.reviews} reviews)</span>
-            </div>
-            <div class="specs-line">
-                <span><i class="fas fa-memory"></i> ${p.ram}</span>
-                <span><i class="fas fa-hdd"></i> ${p.storage}</span>
-                <span><i class="fas fa-tv"></i> ${p.gpu}</span>
-            </div>
-            <div class="price">${p.price.toLocaleString()} €</div>
-            <div class="delivery"><i class="fas fa-truck"></i> Free · tomorrow</div>
-            <button class="btn btn-primary" onclick="addToCart(${p.id})">
-                <i class="fas fa-cart-plus"></i> Select
-            </button>
-        </div>
-    `).join('') || '<p style="color:#666; text-align:center; padding:40px;">No products found</p>';
+        `).join('');
+    }
     
     document.getElementById('totalBadge').textContent = `🔥 ${total} models`;
     renderPagination(totalPages);
@@ -87,7 +90,10 @@ function renderProducts() {
 // ===== PAGINATION =====
 function renderPagination(totalPages) {
     const container = document.getElementById('pagination');
-    if (totalPages <= 1) { container.innerHTML = ''; return; }
+    if (totalPages <= 1) { 
+        container.innerHTML = ''; 
+        return; 
+    }
     
     let html = '';
     for (let i = 1; i <= totalPages; i++) {
@@ -107,28 +113,4 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.filters .pill').forEach(pill => {
         pill.addEventListener('click', function() {
             document.querySelectorAll('.filters .pill').forEach(p => p.classList.remove('active'));
-            this.classList.add('active');
-            currentFilter = this.dataset.filter;
-            currentPage = 1;
-            renderProducts();
-        });
-    });
-    renderProducts();
-});
-
-// ===== CART =====
-function getCart() {
-    return JSON.parse(localStorage.getItem('rynexCart')) || [];
-}
-
-function saveCart(cart) {
-    localStorage.setItem('rynexCart', JSON.stringify(cart));
-    updateCartCount();
-}
-
-function addToCart(id) {
-    const product = allProducts.find(p => p.id === id);
-    if (!product) return;
-    
-    const cart = getCart();
-    const existing = cart.find(item => item.id === id);
+            this.classList.add('active
