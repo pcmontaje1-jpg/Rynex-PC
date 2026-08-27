@@ -109,8 +109,24 @@ function goToPage(page) {
 }
 
 // ===== FILTERS =====
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
+    // Фильтры
     document.querySelectorAll('.filters .pill').forEach(pill => {
         pill.addEventListener('click', function() {
             document.querySelectorAll('.filters .pill').forEach(p => p.classList.remove('active'));
-            this.classList.add('active
+            this.classList.add('active');
+            currentFilter = this.dataset.filter;
+            currentPage = 1;
+            renderProducts();
+        });
+    });
+    
+    // Инициализация
+    renderProducts();
+});
+
+// ===== CART FUNCTIONS =====
+function getCart() {
+    try {
+        return JSON.parse(localStorage.getItem('rynexCart')) || [];
+    } catch
