@@ -28,6 +28,11 @@
     </header>
 
     <div class="container">
+        <!-- ПОИСК -->
+        <div class="search-bar">
+            <input type="text" id="componentSearch" placeholder="🔍 Search components by name..." oninput="searchComponents()" />
+        </div>
+
         <div class="filters" id="componentFilterContainer">
             <span class="pill active" data-filter="all"><i class="fas fa-th-list"></i> All</span>
             <span class="pill" data-filter="cpu"><i class="fas fa-microchip"></i> CPU</span>
