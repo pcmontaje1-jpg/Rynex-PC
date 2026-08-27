@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rynex PC - Support</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Rynex <span>PC</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="builds.html">Builds</a>
+                <a href="custom.html">Custom PC</a>
+                <a href="support.html" class="active">Support</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-content">
+        <div class="section-header">
+            <h1>Support</h1>
+            <p>We're here to help</p>
+        </div>
+        <div class="support-content">
+            <div class="support-info">
+                <h3>Warranty</h3>
+                <p>All our builds come with 2-year warranty on parts and lifetime technical support.</p>
+                
+                <h3>Technical Support</h3>
+                <p>Need help with your PC? Contact us anytime:</p>
+                <ul class="about-list">
+                    <li>✓ Free technical support</li>
+                    <li>✓ Remote assistance</li>
+                    <li>✓ Hardware diagnostics</li>
+                    <li>✓ Upgrade consultations</li>
+                </ul>
+            </div>
+            <form id="support-form" class="order-form">
+                <h3 style="text-align: center; margin-bottom: 1rem;">Contact Support</h3>
+                <div class="form-group">
+                    <label>Your Name:</label>
+                    <input type="text" id="support-name" name="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label>Your Email:</label>
+                    <input type="email" id="support-email" name="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label>Issue Description:</label>
+                    <textarea id="support-message" name="message" rows="5" placeholder="Describe your issue..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Support Request</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Rynex PC. All rights reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
