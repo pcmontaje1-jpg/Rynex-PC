@@ -1,243 +1,43 @@
-// База данных сборок
-const builds = [
-    {
-        id: 1,
-        name: "Starter Basic",
-        category: "budget",
-        price: 399,
-        originalPrice: 449,
-        image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=600",
-        specs: [
-            "CPU: AMD Ryzen 3 3200G",
-            "GPU: Integrated Radeon Vega 8",
-            "RAM: 8GB DDR4 2666MHz",
-            "Storage: 256GB SSD SATA",
-            "Motherboard: A320M",
-            "PSU: 450W 80+ Bronze",
-            "Case: Basic ATX"
-        ]
-    },
-    {
-        id: 2,
-        name: "Office Pro",
-        category: "work",
-        price: 549,
-        originalPrice: 619,
-        image: "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=600",
-        specs: [
-            "CPU: Intel Core i3-12100",
-            "GPU: Intel UHD Graphics 730",
-            "RAM: 16GB DDR4 3200MHz",
-            "Storage: 500GB NVMe SSD",
-            "Motherboard: B660M",
-            "PSU: 500W 80+ Bronze",
-            "Case: Compact Office"
-        ]
-    },
-    {
-        id: 3,
-        name: "Gaming Entry",
-        category: "gaming",
-        price: 899,
-        originalPrice: 999,
-        image: "https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=600",
-        specs: [
-            "CPU: AMD Ryzen 5 5600",
-            "GPU: GTX 1660 Super 6GB",
-            "RAM: 16GB DDR4 3600MHz",
-            "Storage: 1TB NVMe SSD",
-            "Motherboard: B550M",
-            "PSU: 650W 80+ Gold",
-            "Case: Mid Tower RGB"
-        ]
-    },
-    {
-        id: 4,
-        name: "Gaming Workstation",
-        category: "gaming",
-        price: 1299,
-        originalPrice: 1449,
-        image: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=600",
-        specs: [
-            "CPU: Intel Core i5-14600K",
-            "GPU: RTX 4060 8GB",
-            "RAM: 32GB DDR5 6000MHz",
-            "Storage: 1TB NVMe Gen4",
-            "Motherboard: Z790",
-            "PSU: 750W 80+ Gold",
-            "Case: Mid Tower RGB"
-        ]
-    },
-    {
-        id: 5,
-        name: "Gaming Pro",
-        category: "gaming",
-        price: 1899,
-        originalPrice: 2149,
-        image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600",
-        specs: [
-            "CPU: Intel Core i5-14600K",
-            "GPU: RTX 4070 Super 12GB",
-            "RAM: 32GB DDR5 6000MHz",
-            "Storage: 2TB NVMe Gen4",
-            "Motherboard: Z790 Aorus",
-            "PSU: 750W 80+ Gold",
-            "Case: Premium RGB"
-        ]
-    },
-    {
-        id: 6,
-        name: "Gaming Elite",
-        category: "gaming",
-        price: 2499,
-        originalPrice: 2849,
-        image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600",
-        specs: [
-            "CPU: AMD Ryzen 7 7800X3D",
-            "GPU: RTX 4070 Ti Super 16GB",
-            "RAM: 32GB DDR5 6400MHz",
-            "Storage: 2TB NVMe Gen4",
-            "Motherboard: X670E",
-            "PSU: 850W 80+ Gold",
-            "Case: Premium RGB"
-        ]
-    },
-    {
-        id: 7,
-        name: "Gaming Ultimate",
-        category: "gaming",
-        price: 3299,
-        originalPrice: 3749,
-        image: "https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=600",
-        specs: [
-            "CPU: AMD Ryzen 7 7800X3D",
-            "GPU: RTX 4080 Super 16GB",
-            "RAM: 64GB DDR5 6400MHz",
-            "Storage: 2TB NVMe Gen4 + 2TB HDD",
-            "Motherboard: X670E Hero",
-            "PSU: 1000W 80+ Platinum",
-            "Case: Full Tower RGB"
-        ]
-    },
-    {
-        id: 8,
-        name: "Creator Pro",
-        category: "pro",
-        price: 4999,
-        originalPrice: 5699,
-        image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600",
-        specs: [
-            "CPU: Intel Core i9-14900K",
-            "GPU: RTX 4090 24GB",
-            "RAM: 64GB DDR5 6400MHz",
-            "Storage: 4TB NVMe Gen4",
-            "Motherboard: Z790 Aorus Master",
-            "PSU: 1000W 80+ Platinum",
-            "Case: Full Tower Premium"
-        ]
-    },
-    {
-        id: 9,
-        name: "Ultimate Workstation",
-        category: "pro",
-        price: 9999,
-        originalPrice: 11999,
-        image: "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=600",
-        specs: [
-            "CPU: AMD Threadripper 7960X",
-            "GPU: RTX 4090 24GB",
-            "RAM: 128GB DDR5 ECC",
-            "Storage: 8TB NVMe Gen4",
-            "Motherboard: TRX50",
-            "PSU: 1500W 80+ Titanium",
-            "Case: Full Tower Workstation"
-        ]
-    }
+const products = [
+    { id: 1, name: 'Rynex Mini Ryzen 3 3100 / 8GB / 256GB SSD / GT 1030', price: 99, rating: 4.2, reviews: 34, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
+    { id: 2, name: 'Rynex Core i3-12100F / 16GB / 512GB SSD / RX 6600', price: 349, rating: 4.5, reviews: 89, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
+    { id: 3, name: 'Rynex Ryzen 5 5600X / 16GB / 1TB SSD / RTX 3060', price: 649, rating: 4.7, reviews: 156, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
+    { id: 4, name: 'Rynex Ryzen 7 5700X / 32GB / 1TB SSD / RTX 4060', price: 949, rating: 4.8, reviews: 210, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
+    { id: 5, name: 'Rynex Ryzen 7 5800X / 32GB / 1TB NVMe / RTX 4070', price: 1249, rating: 4.9, reviews: 312, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
+    { id: 6, name: 'Rynex Imperial Ryzen 7 5700X / 32GB / 1TB SSD / RTX 5070', price: 1699, rating: 4.6, reviews: 523, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
+    { id: 7, name: 'Rynex Ryzen 9 5900X / 64GB / 2TB NVMe / RTX 5070 Ti', price: 2199, rating: 4.8, reviews: 178, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
+    { id: 8, name: 'Rynex Core i7-13700K / 64GB / 2TB SSD / RTX 5080', price: 3099, rating: 4.9, reviews: 96, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
+    { id: 9, name: 'Rynex Ryzen 9 7950X / 128GB / 4TB NVMe / RTX 5090', price: 4499, rating: 5.0, reviews: 43, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
+    { id: 10, name: 'Rynex Core i9-14900KS / 128GB / 4TB SSD / RTX 5090 Ti', price: 6199, rating: 4.9, reviews: 27, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
+    { id: 11, name: 'Rynex Threadripper 7980X / 256GB / 8TB NVMe / RTX 5090 Ti', price: 7999, rating: 5.0, reviews: 12, img: 'https://via.placeholder.com/400x300/222/666?text=PC' },
+    { id: 12, name: 'Rynex Ultimate Dual RTX 5090 / Threadripper / 256GB', price: 9999, rating: 5.0, reviews: 8, img: 'https://via.placeholder.com/400x300/222/666?text=PC' }
 ];
 
-// Отображение сборок
-function displayBuilds(category = 'all') {
-    const grid = document.getElementById('builds-grid');
-    if (!grid) return;
-    
-    const filtered = category === 'all' ? builds : builds.filter(b => b.category === category);
-    
-    grid.innerHTML = filtered.map(build => `
-        <div class="build-card">
-            <img src="${build.image}" alt="${build.name}">
-            <div class="build-content">
-                <h3>${build.name}</h3>
-                <div class="price">€${build.price.toLocaleString()}</div>
-                <div class="savings">Save €${(build.originalPrice - build.price).toLocaleString()}!</div>
-                <ul class="specs">
-                    ${build.specs.map(spec => `<li>${spec}</li>`).join('')}
-                </ul>
-                <a href="#" class="order-btn" onclick="orderBuild('${build.name}', ${build.price}, '${build.specs.join(' | ')}')">Order Now</a>
+function renderProducts() {
+    const grid = document.getElementById('productGrid');
+    grid.innerHTML = products.map(p => `
+        <div class="product-card">
+            <div class="img-box">
+                <img src="${p.img}" alt="${p.name}">
             </div>
+            <span class="tag water"><i class="fas fa-droplet"></i> Liquid Cooling</span>
+            <h3>${p.name}</h3>
+            <div class="rating">
+                <i class="fas fa-star"></i> ${p.rating} <span>${p.reviews} reviews</span>
+            </div>
+            <div class="price">${p.price.toLocaleString()} €</div>
+            <div class="delivery"><i class="fas fa-truck"></i> Free · tomorrow</div>
+            <a href="product.html?id=${p.id}" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Select</a>
         </div>
     `).join('');
 }
 
-// Фильтрация
-function filterBuilds(category) {
-    displayBuilds(category);
-    
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    event.target.classList.add('active');
-}
+renderProducts();
 
-// Заказ сборки
-function orderBuild(name, price, specs) {
-    const subject = encodeURIComponent(`Order: ${name} - €${price}`);
-    const body = encodeURIComponent(`Hello Rynex PC,\n\nI would like to order:\n\n${name}\nPrice: €${price}\n\nSpecifications:\n${specs}\n\nPlease contact me for payment details.\n\nThank you.`);
-    
-    window.location.href = `mailto:pcmontaje1@gmail.com?subject=${subject}&body=${body}`;
-}
-
-// Обработка форм
-document.addEventListener('DOMContentLoaded', function() {
-    // Показываем сборки
-    displayBuilds('all');
-    
-    // Custom form
-    const customForm = document.getElementById('custom-form');
-    if (customForm) {
-        customForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const subject = 'Custom PC Build Request';
-            const body = `Usage: ${document.getElementById('usage').value}\nBudget: €${document.getElementById('budget-range').value}\nBrands: ${document.getElementById('brands').value}\nName: ${document.getElementById('name').value}\nEmail: ${document.getElementById('email').value}\n\nRequirements:\n${document.getElementById('requirements').value}`;
-            window.location.href = `mailto:pcmontaje1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        });
-    }
-    
-    // Support form
-    const supportForm = document.getElementById('support-form');
-    if (supportForm) {
-        supportForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const subject = 'Support Request';
-            const body = `Name: ${document.getElementById('support-name').value}\nEmail: ${document.getElementById('support-email').value}\n\nIssue:\n${document.getElementById('support-message').value}`;
-            window.location.href = `mailto:pcmontaje1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        });
-    }
-    
-    // Contact form
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const subject = 'Contact from Website';
-            const body = `Name: ${document.getElementById('contact-name').value}\nEmail: ${document.getElementById('contact-email').value}\n\nMessage:\n${document.getElementById('contact-message').value}`;
-            window.location.href = `mailto:pcmontaje1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        });
-    }
-    
-    // Проверка URL параметров
-    const urlParams = new URLSearchParams(window.location.search);
-    const cat = urlParams.get('cat');
-    if (cat && window.location.pathname.includes('builds.html')) {
-        filterBuilds(cat);
+let cartCount = 0;
+document.addEventListener('click', (e) => {
+    if (e.target.closest('.btn-primary')) {
+        cartCount++;
+        document.querySelector('.cart-count').textContent = cartCount;
     }
 });
