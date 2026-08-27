@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rynex PC - Builds</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Rynex <span>PC</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="builds.html" class="active">Builds</a>
+                <a href="custom.html">Custom PC</a>
+                <a href="support.html">Support</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-content">
+        <div class="section-header">
+            <h1>Our Builds</h1>
+            <p>Choose your perfect PC</p>
+        </div>
+        
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterBuilds('all')">All</button>
+            <button class="filter-btn" onclick="filterBuilds('budget')">Budget</button>
+            <button class="filter-btn" onclick="filterBuilds('work')">Work</button>
+            <button class="filter-btn" onclick="filterBuilds('gaming')">Gaming</button>
+            <button class="filter-btn" onclick="filterBuilds('pro')">Professional</button>
+        </div>
+
+        <div class="builds-grid" id="builds-grid">
+            <!-- Сборки будут добавлены через JavaScript -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Rynex PC. All rights reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
