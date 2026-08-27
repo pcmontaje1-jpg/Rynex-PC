@@ -17,6 +17,7 @@ body {
     padding: 20px;
 }
 
+/* ===== HEADER ===== */
 header {
     background: #0f0f0f;
     padding: 18px 0;
@@ -99,6 +100,7 @@ nav a.active {
     text-align: center;
 }
 
+/* ===== FILTERS ===== */
 .filters {
     display: flex;
     gap: 10px;
@@ -136,6 +138,7 @@ nav a.active {
     color: #fff;
 }
 
+/* ===== SECTION TITLE ===== */
 .section-title {
     display: flex;
     justify-content: space-between;
@@ -158,12 +161,14 @@ nav a.active {
     border: 1px solid #2a2a2a;
 }
 
+/* ===== PRODUCT GRID ===== */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 24px;
 }
 
+/* ===== PRODUCT CARD ===== */
 .product-card {
     background: #121212;
     border-radius: 20px;
@@ -172,7 +177,6 @@ nav a.active {
     transition: 0.4s;
     display: flex;
     flex-direction: column;
-    position: relative;
 }
 .product-card:hover {
     border-color: #444;
@@ -187,9 +191,6 @@ nav a.active {
     background: #1a1a1a;
     border-radius: 14px;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 14px;
     border: 1px solid #2a2a2a;
 }
@@ -283,19 +284,7 @@ nav a.active {
     font-size: 24px;
     font-weight: 700;
     color: #fff;
-    margin: 6px 0 4px;
-}
-
-.product-card .delivery {
-    color: #777;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-bottom: 14px;
-}
-.product-card .delivery i {
-    color: #888;
+    margin: 6px 0 10px;
 }
 
 .btn {
@@ -328,6 +317,7 @@ nav a.active {
     margin-right: 8px;
 }
 
+/* ===== PAGINATION ===== */
 .pagination {
     display: flex;
     justify-content: center;
@@ -344,6 +334,8 @@ nav a.active {
     border: 1px solid #2a2a2a;
     transition: 0.3s;
     cursor: pointer;
+    min-width: 44px;
+    text-align: center;
 }
 .pagination a:hover {
     border-color: #555;
@@ -355,6 +347,7 @@ nav a.active {
     border-color: #555;
 }
 
+/* ===== FOOTER ===== */
 footer {
     margin-top: 60px;
     padding-top: 30px;
@@ -380,7 +373,7 @@ footer .social-links a {
     margin: 0 12px;
 }
 
-/* Contact page */
+/* ===== CONTACT PAGE (в стиле сайта) ===== */
 .contact-page {
     max-width: 700px;
     margin: 40px auto;
@@ -388,23 +381,24 @@ footer .social-links a {
     padding: 50px 40px;
     border-radius: 28px;
     border: 1px solid #222;
-    text-align: center;
 }
 .contact-page h1 {
     font-size: 34px;
     margin-bottom: 12px;
+    text-align: center;
     color: #fff;
 }
 .contact-page .sub {
     color: #888;
     margin-bottom: 32px;
+    text-align: center;
     font-size: 16px;
 }
 .contact-item {
     display: flex;
     align-items: center;
     gap: 18px;
-    padding: 14px 20px;
+    padding: 16px 22px;
     background: #1a1a1a;
     border-radius: 16px;
     margin-bottom: 12px;
@@ -415,14 +409,20 @@ footer .social-links a {
     border-color: #444;
     background: #1f1f1f;
 }
-.contact-item i {
-    width: 32px;
+.contact-item .icon {
+    width: 44px;
+    height: 44px;
+    background: #222;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 20px;
     color: #aaa;
-    text-align: center;
+    flex-shrink: 0;
+    border: 1px solid #2a2a2a;
 }
 .contact-item .info {
-    text-align: left;
     flex: 1;
 }
 .contact-item .info .label {
@@ -444,7 +444,7 @@ footer .social-links a {
     color: #fff;
 }
 
-/* About page */
+/* ===== ABOUT PAGE ===== */
 .about-page {
     max-width: 800px;
     margin: 40px auto;
@@ -482,7 +482,7 @@ footer .social-links a {
     font-size: 14px;
 }
 
-/* Cart page */
+/* ===== CART PAGE ===== */
 .cart-page {
     max-width: 800px;
     margin: 40px auto;
@@ -565,6 +565,7 @@ footer .social-links a {
     color: #333;
 }
 
+/* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
     .header-inner {
         flex-direction: column;
