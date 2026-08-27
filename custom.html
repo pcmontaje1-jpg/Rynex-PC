@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rynex PC - Custom Build</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Rynex <span>PC</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="builds.html">Builds</a>
+                <a href="custom.html" class="active">Custom PC</a>
+                <a href="support.html">Support</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-content">
+        <div class="section-header">
+            <h1>Custom PC Builder</h1>
+            <p>Tell us what you need, we'll build it for you</p>
+        </div>
+        <form id="custom-form" class="order-form">
+            <div class="form-group">
+                <label>What will you use the PC for?</label>
+                <select id="usage" name="usage">
+                    <option value="gaming">Gaming</option>
+                    <option value="work">Work / Office</option>
+                    <option value="editing">Video Editing / Rendering</option>
+                    <option value="streaming">Streaming</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Budget Range (€)</label>
+                <select id="budget-range" name="budget">
+                    <option value="500-800">500 - 800</option>
+                    <option value="800-1200">800 - 1200</option>
+                    <option value="1200-2000">1200 - 2000</option>
+                    <option value="2000-3000">2000 - 3000</option>
+                    <option value="3000+">3000+</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Preferred Brands (if any)</label>
+                <input type="text" id="brands" name="brands" placeholder="NVIDIA, AMD, Intel...">
+            </div>
+            <div class="form-group">
+                <label>Your Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label>Your Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label>Additional Requirements:</label>
+                <textarea id="requirements" name="requirements" rows="5" placeholder="Any specific requirements?"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Request Custom Build</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Rynex PC. All rights reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
