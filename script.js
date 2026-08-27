@@ -1,4 +1,4 @@
-// ===== 30 PRODUCTS =====
+// ===== 25 PRODUCTS =====
 const allProducts = [
     // Budget
     { id: 1, name: 'Rynex Starter', cpu: 'AMD Ryzen 3 3100', ram: '8GB DDR4 3200MHz', storage: '256GB NVMe SSD', gpu: 'GT 1030 2GB', price: 299, originalPrice: 399, profit: 100, rating: 4.2, reviews: 34, category: 'budget', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
@@ -57,4 +57,193 @@ function addToCart(productId) {
         cart.push({ ...product, quantity: 1 });
     }
     saveCart(cart);
-    alert(product.name + '
+    alert(product.name + ' added to cart!');
+}
+
+function removeFromCart(productId) {
+    let cart = getCart();
+    cart = cart.filter(item => item.id !== productId);
+    saveCart(cart);
+    renderCart();
+}
+
+function updateCartCount() {
+    const cart = getCart();
+    const total = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+    document.querySelectorAll('.cart-count').forEach(el => el.textContent = total);
+}
+
+function getCartTotal() {
+    const cart = getCart();
+    return cart.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
+}
+
+function renderCart() {
+    const container = document.getElementById('cartItems');
+    if (!container) return;
+    const cart = getCart();
+    if (cart.length === 0) {
+        container.innerHTML = `
+            <div class="cart-empty">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Your cart is empty</p>
+                <a href="index.html" class="btn btn-primary" style="display:inline-block; padding: 10px 30px;">Go to Catalog</a>
+            </div>
+        `;
+        const totalContainer = document.getElementById('cartTotal');
+        if (totalContainer) totalContainer.innerHTML = '';
+        return;
+    }
+    container.innerHTML = cart.map(item => `
+        <div class="cart-item">
+            <div class="img-box">
+                <img src="${item.img}" alt="${item.name}" />
+            </div>
+            <div class="info">
+                <h4>${item.name}</h4>
+                <div class="price">${item.price.toLocaleString()} € × ${item.quantity || 1}</div>
+            </div>
+            <button class="remove-btn" onclick="removeFromCart(${item.id})">
+                <i class="fas fa-trash"></i> Remove
+            </button>
+        </div>
+    `).join('');
+    const total = getCartTotal();
+    const totalContainer = document.getElementById('cartTotal');
+    if (totalContainer) {
+        totalContainer.innerHTML = `
+            <div class="cart-total">
+                <p style="color:#888; font-size:14px;">Total</p>
+                <div class="total-price">${total.toLocaleString()} €</div>
+                <button class="btn btn-primary" style="margin-top:16px; display:inline-block; padding: 12px 40px;" onclick="checkout()">
+                    <i class="fas fa-credit-card"></i> Checkout
+                </button>
+            </div>
+        `;
+    }
+}
+
+function checkout() {
+    alert('Thank you for your order! 🎉');
+    localStorage.removeItem('rynexCart');
+    renderCart();
+    updateCartCount();
+}
+
+// ===== SUPPORT =====
+function sendSupport(e) {
+    e.preventDefault();
+    document.getElementById('supportForm').style.display = 'none';
+    document.getElementById('chatSuccess').style.display = 'block';
+}
+
+function resetSupport() {
+    document.getElementById('supportForm').style.display = 'block';
+    document.getElementById('chatSuccess').style.display = 'none';
+    document.getElementById('supportForm').reset();
+}
+
+// ===== CUSTOM =====
+function sendCustom(e) {
+    e.preventDefault();
+    document.getElementById('customForm').style.display = 'none';
+    document.getElementById('customSuccess').style.display = 'block';
+}
+
+function resetCustom() {
+    document.getElementById('customForm').style.display = 'block';
+    document.getElementById('customSuccess').style.display = 'none';
+    document.getElementById('customForm').reset();
+}
+
+// ===== HOME PAGE (filters + pagination) =====
+let currentFilter = 'all';
+let currentPage = 1;
+const itemsPerPage = 4;
+
+function renderProducts() {
+    const grid = document.getElementById('productGrid');
+    if (!grid) return;
+    const filtered = currentFilter === 'all' ? allProducts : allProducts.filter(p => p.category === currentFilter);
+    const total = filtered.length;
+    const totalPages = Math.ceil(total / itemsPerPage);
+    if (currentPage > totalPages) currentPage = Math.max(1, totalPages);
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    const pageItems = filtered.slice(start, end);
+    if (pageItems.length === 0) {
+        grid.innerHTML = '<p style="color:#666; text-align:center; padding:40px; width:100%;">No products found</p>';
+    } else {
+        grid.innerHTML = pageItems.map(p => `
+            <div class="product-card">
+                <div class="img-box">
+                    <img src="${p.img}" alt="${p.name}" loading="lazy" />
+                </div>
+                <span class="tag water"><i class="fas fa-droplet"></i> Liquid Cooling</span>
+                <span class="cpu-badge"><i class="fas fa-microchip"></i> ${p.cpu}</span>
+                <h3>${p.name}</h3>
+                <div class="rating">
+                    <i class="fas fa-star"></i> ${p.rating} <span>(${p.reviews} reviews)</span>
+                </div>
+                <div class="specs-line">
+                    <span><i class="fas fa-memory"></i> ${p.ram}</span>
+                    <span><i class="fas fa-hdd"></i> ${p.storage}</span>
+                    <span><i class="fas fa-tv"></i> ${p.gpu}</span>
+                </div>
+                <div class="price-row">
+                    <span class="price">${p.price.toLocaleString()} €</span>
+                    <span class="original">${p.originalPrice.toLocaleString()} €</span>
+                    <span class="profit-badge"><i class="fas fa-coins"></i> +${p.profit}€</span>
+                </div>
+                <button class="btn btn-primary" onclick="addToCart(${p.id})">
+                    <i class="fas fa-cart-plus"></i> Select
+                </button>
+            </div>
+        `).join('');
+    }
+    const badge = document.getElementById('totalBadge');
+    if (badge) badge.textContent = '🔥 ' + total + ' models';
+    const pagination = document.getElementById('pagination');
+    if (pagination) {
+        if (totalPages <= 1) {
+            pagination.innerHTML = '';
+            return;
+        }
+        let html = '';
+        for (let i = 1; i <= totalPages; i++) {
+            html += `<a class="${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</a>`;
+        }
+        pagination.innerHTML = html;
+    }
+}
+
+function goToPage(page) {
+    currentPage = page;
+    renderProducts();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded', function() {
+    updateCartCount();
+    // Home page
+    if (document.getElementById('productGrid')) {
+        const filterContainer = document.getElementById('filterContainer');
+        if (filterContainer) {
+            filterContainer.querySelectorAll('.pill').forEach(pill => {
+                pill.addEventListener('click', function() {
+                    filterContainer.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+                    this.classList.add('active');
+                    currentFilter = this.dataset.filter;
+                    currentPage = 1;
+                    renderProducts();
+                });
+            });
+        }
+        renderProducts();
+    }
+    // Cart page
+    if (document.getElementById('cartItems')) {
+        renderCart();
+    }
+});
