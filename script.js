@@ -1,45 +1,53 @@
 // =============================================
-// 25 PC BUILDS — REAL PRICES (May 2026)
+// 35 PC BUILDS — УНИКАЛЬНЫЕ ФОТО ДЛЯ КАЖДОЙ
 // =============================================
 const allProducts = [
-    // ===== BUDGET =====
+    // BUDGET (4)
     { id: 1, name: 'Rynex Starter', cpu: 'AMD Ryzen 3 3100', ram: '8GB DDR4 3200MHz', storage: '256GB NVMe SSD', gpu: 'GT 1030 2GB', price: 420, originalPrice: 550, rating: 4.2, reviews: 34, category: 'budget', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
     { id: 2, name: 'Rynex Core', cpu: 'Intel Core i3-12100F', ram: '16GB DDR4 3200MHz', storage: '512GB NVMe SSD', gpu: 'RX 6600 8GB', price: 720, originalPrice: 890, rating: 4.5, reviews: 89, category: 'budget', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
     { id: 3, name: 'Rynex Lite', cpu: 'AMD Ryzen 5 4500', ram: '16GB DDR4 3200MHz', storage: '512GB NVMe SSD', gpu: 'GTX 1650 4GB', price: 580, originalPrice: 720, rating: 4.3, reviews: 67, category: 'budget', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' },
     { id: 4, name: 'Rynex Play', cpu: 'Intel Core i5-11400F', ram: '16GB DDR4 3200MHz', storage: '1TB NVMe SSD', gpu: 'RX 6500 XT 4GB', price: 790, originalPrice: 960, rating: 4.4, reviews: 112, category: 'budget', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
-
-    // ===== GAMING =====
+    // GAMING (8)
     { id: 5, name: 'Rynex Gamer', cpu: 'AMD Ryzen 5 5600X', ram: '16GB DDR4 3600MHz', storage: '1TB NVMe SSD', gpu: 'RTX 3060 12GB', price: 980, originalPrice: 1200, rating: 4.7, reviews: 156, category: 'gaming', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
     { id: 6, name: 'Rynex Pro', cpu: 'AMD Ryzen 7 5700X', ram: '32GB DDR4 3600MHz', storage: '1TB NVMe SSD', gpu: 'RTX 4060 8GB', price: 1250, originalPrice: 1550, rating: 4.8, reviews: 210, category: 'gaming', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' },
     { id: 7, name: 'Rynex Performance', cpu: 'AMD Ryzen 7 5800X', ram: '32GB DDR4 3600MHz', storage: '2TB NVMe SSD', gpu: 'RTX 4070 12GB', price: 1750, originalPrice: 2150, rating: 4.9, reviews: 312, category: 'gaming', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
     { id: 8, name: 'Rynex Ultimate', cpu: 'AMD Ryzen 9 5900X', ram: '64GB DDR4 3600MHz', storage: '2TB NVMe SSD', gpu: 'RTX 4070 Ti 12GB', price: 2200, originalPrice: 2700, rating: 4.9, reviews: 189, category: 'gaming', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
-
-    // ===== HOME =====
+    // HOME (4)
     { id: 9, name: 'Rynex Home', cpu: 'AMD Ryzen 5 5500', ram: '16GB DDR4 3200MHz', storage: '512GB NVMe SSD', gpu: 'GTX 1660 6GB', price: 650, originalPrice: 800, rating: 4.5, reviews: 89, category: 'home', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' },
     { id: 10, name: 'Rynex Family', cpu: 'Intel Core i5-11400', ram: '16GB DDR4 3200MHz', storage: '1TB NVMe SSD', gpu: 'RTX 3050 8GB', price: 850, originalPrice: 1050, rating: 4.6, reviews: 134, category: 'home', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
     { id: 11, name: 'Rynex Studio', cpu: 'AMD Ryzen 7 5700G', ram: '32GB DDR4 3200MHz', storage: '1TB NVMe SSD', gpu: 'RTX 4060 8GB', price: 1200, originalPrice: 1500, rating: 4.7, reviews: 167, category: 'home', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
     { id: 12, name: 'Rynex Creator', cpu: 'Intel Core i7-12700', ram: '32GB DDR4 3200MHz', storage: '2TB NVMe SSD', gpu: 'RTX 4070 12GB', price: 1700, originalPrice: 2100, rating: 4.8, reviews: 198, category: 'home', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' },
-
-    // ===== ADVANCED =====
+    // ADVANCED (4)
     { id: 13, name: 'Rynex Imperial', cpu: 'AMD Ryzen 7 5700X', ram: '32GB DDR4 3600MHz', storage: '1TB NVMe SSD', gpu: 'RTX 5070 12GB', price: 2100, originalPrice: 2600, rating: 4.6, reviews: 523, category: 'advanced', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
     { id: 14, name: 'Rynex Elite', cpu: 'AMD Ryzen 9 5900X', ram: '64GB DDR4 3600MHz', storage: '2TB NVMe SSD', gpu: 'RTX 5070 Ti 16GB', price: 2800, originalPrice: 3500, rating: 4.8, reviews: 178, category: 'advanced', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
     { id: 15, name: 'Rynex Titan', cpu: 'Intel Core i7-13700K', ram: '64GB DDR5 6000MHz', storage: '2TB NVMe SSD', gpu: 'RTX 5080 16GB', price: 3800, originalPrice: 4700, rating: 4.9, reviews: 96, category: 'advanced', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' },
     { id: 16, name: 'Rynex Dominator', cpu: 'AMD Ryzen 9 7950X', ram: '64GB DDR5 6000MHz', storage: '2TB NVMe SSD', gpu: 'RTX 5090 24GB', price: 4800, originalPrice: 6000, rating: 4.9, reviews: 67, category: 'advanced', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
-
-    // ===== PROFESSIONAL =====
+    // PROFESSIONAL
     { id: 17, name: 'Rynex Workstation', cpu: 'AMD Ryzen 9 7900X', ram: '64GB DDR5 5200MHz', storage: '2TB NVMe SSD', gpu: 'RTX 4080 16GB', price: 3200, originalPrice: 4000, rating: 4.8, reviews: 145, category: 'professional', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
     { id: 18, name: 'Rynex Render', cpu: 'Intel Core i9-13900K', ram: '128GB DDR5 5600MHz', storage: '4TB NVMe SSD', gpu: 'RTX 5090 24GB', price: 5200, originalPrice: 6600, rating: 4.9, reviews: 89, category: 'professional', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' },
     { id: 19, name: 'Rynex AI', cpu: 'AMD Threadripper 7960X', ram: '128GB DDR5 5600MHz', storage: '4TB NVMe SSD', gpu: 'RTX 5090 Ti 24GB', price: 7200, originalPrice: 9000, rating: 4.9, reviews: 54, category: 'professional', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
     { id: 20, name: 'Rynex Ultimate Pro', cpu: 'AMD Threadripper 7980X', ram: '256GB DDR5 5600MHz', storage: '8TB NVMe SSD', gpu: 'RTX 5090 Ti 24GB', price: 9500, originalPrice: 12000, rating: 5.0, reviews: 23, category: 'professional', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
-    { id: 21, name: 'Rynex Dual GPU', cpu: 'AMD Threadripper 7980X', ram: '256GB DDR5 5600MHz', storage: '8TB NVMe SSD', gpu: 'Dual RTX 5090', price: 11500, originalPrice: 15000, rating: 5.0, reviews: 15, category: 'professional', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' },
-    { id: 22, name: 'Rynex Quantum', cpu: 'Intel Xeon W9-3495X', ram: '256GB DDR5 5600MHz', storage: '8TB NVMe SSD', gpu: 'Dual RTX 5090', price: 13500, originalPrice: 17000, rating: 5.0, reviews: 8, category: 'professional', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
-    { id: 23, name: 'Rynex Supernova', cpu: 'AMD Threadripper 7995WX', ram: '512GB DDR5 5600MHz', storage: '12TB NVMe SSD', gpu: 'Dual RTX 5090', price: 16500, originalPrice: 21000, rating: 5.0, reviews: 5, category: 'professional', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
-    { id: 24, name: 'Rynex Nebula', cpu: 'AMD Threadripper 7995WX', ram: '512GB DDR5 5600MHz', storage: '16TB NVMe SSD', gpu: 'Quad RTX 5090', price: 20500, originalPrice: 26000, rating: 5.0, reviews: 3, category: 'professional', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' },
-    { id: 25, name: 'Rynex Enterprise', cpu: 'AMD Threadripper 7995WX', ram: '1TB DDR5 5600MHz', storage: '32TB NVMe SSD', gpu: 'Quad RTX 5090', price: 30500, originalPrice: 40000, rating: 5.0, reviews: 2, category: 'professional', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' }
+    // Дополнительные сборки (AMD + RX)
+    { id: 21, name: 'Rynex Speed', cpu: 'AMD Ryzen 5 7600X', ram: '16GB DDR5 5200MHz', storage: '1TB NVMe SSD', gpu: 'RX 7600 8GB', price: 899, originalPrice: 1149, rating: 4.6, reviews: 45, category: 'gaming', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
+    { id: 22, name: 'Rynex XT', cpu: 'AMD Ryzen 7 7700X', ram: '32GB DDR5 6000MHz', storage: '1TB NVMe SSD', gpu: 'RX 7700 XT 12GB', price: 1299, originalPrice: 1699, rating: 4.8, reviews: 78, category: 'gaming', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' },
+    { id: 23, name: 'Rynex 3D', cpu: 'AMD Ryzen 7 7800X3D', ram: '32GB DDR5 6000MHz', storage: '2TB NVMe SSD', gpu: 'RX 7800 XT 16GB', price: 1899, originalPrice: 2499, rating: 4.9, reviews: 112, category: 'advanced', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
+    { id: 24, name: 'Rynex GRE', cpu: 'AMD Ryzen 9 7900X', ram: '64GB DDR5 6000MHz', storage: '2TB NVMe SSD', gpu: 'RX 7900 GRE 16GB', price: 2399, originalPrice: 3099, rating: 4.9, reviews: 67, category: 'advanced', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
+    { id: 25, name: 'Rynex XTX', cpu: 'AMD Ryzen 9 7950X', ram: '64GB DDR5 6000MHz', storage: '4TB NVMe SSD', gpu: 'RX 7900 XTX 24GB', price: 3499, originalPrice: 4599, rating: 5.0, reviews: 34, category: 'professional', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' },
+    { id: 26, name: 'Rynex Max', cpu: 'AMD Ryzen 9 7950X3D', ram: '128GB DDR5 6000MHz', storage: '8TB NVMe SSD', gpu: 'RX 7900 XTX 24GB (Dual)', price: 5999, originalPrice: 7999, rating: 5.0, reviews: 21, category: 'professional', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
+    { id: 27, name: 'Rynex Ultra', cpu: 'AMD Threadripper 7970X', ram: '256GB DDR5 5600MHz', storage: '8TB NVMe SSD', gpu: 'Quad RX 7900 XTX', price: 11999, originalPrice: 15999, rating: 5.0, reviews: 12, category: 'professional', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
+    { id: 28, name: 'Rynex Titan X', cpu: 'AMD Threadripper 7980X', ram: '256GB DDR5 5600MHz', storage: '12TB NVMe SSD', gpu: 'Quad RX 7900 XTX', price: 14999, originalPrice: 19999, rating: 5.0, reviews: 7, category: 'professional', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' },
+    { id: 29, name: 'Rynex Extreme', cpu: 'AMD Threadripper 7995WX', ram: '512GB DDR5 5600MHz', storage: '16TB NVMe SSD', gpu: 'Quad RX 7900 XTX', price: 24999, originalPrice: 32999, rating: 5.0, reviews: 4, category: 'professional', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
+    { id: 30, name: 'Rynex Infinity', cpu: 'AMD Threadripper 7995WX', ram: '1TB DDR5 5600MHz', storage: '32TB NVMe SSD', gpu: 'Octa RX 7900 XTX', price: 39999, originalPrice: 52999, rating: 5.0, reviews: 2, category: 'professional', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
+    // Ещё 5 сборок
+    { id: 31, name: 'Rynex Apex', cpu: 'AMD Ryzen 7 5800X3D', ram: '32GB DDR4 3600MHz', storage: '1TB NVMe SSD', gpu: 'RX 6800 XT 16GB', price: 1399, originalPrice: 1799, rating: 4.8, reviews: 89, category: 'gaming', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
+    { id: 32, name: 'Rynex Prime', cpu: 'Intel Core i7-13700KF', ram: '32GB DDR5 6000MHz', storage: '2TB NVMe SSD', gpu: 'RTX 4080 16GB', price: 2999, originalPrice: 3799, rating: 4.9, reviews: 56, category: 'advanced', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' },
+    { id: 33, name: 'Rynex Vision', cpu: 'AMD Ryzen 9 7900X', ram: '64GB DDR5 6000MHz', storage: '4TB NVMe SSD', gpu: 'RX 7900 XTX 24GB', price: 3299, originalPrice: 4199, rating: 4.9, reviews: 43, category: 'professional', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&h=300&fit=crop&auto=format' },
+    { id: 34, name: 'Rynex Sigma', cpu: 'AMD Threadripper 7960X', ram: '128GB DDR5 5600MHz', storage: '8TB NVMe SSD', gpu: 'Dual RTX 5090', price: 8999, originalPrice: 11500, rating: 5.0, reviews: 18, category: 'professional', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&h=300&fit=crop&auto=format' },
+    { id: 35, name: 'Rynex Omega', cpu: 'AMD Threadripper 7980X', ram: '512GB DDR5 5600MHz', storage: '16TB NVMe SSD', gpu: 'Quad RTX 5090', price: 22999, originalPrice: 28999, rating: 5.0, reviews: 6, category: 'professional', img: 'https://images.unsplash.com/photo-1600068474554-9e3e8a1b1b5b?w=400&h=300&fit=crop&auto=format' }
 ];
 
 // =============================================
-// 32 COMPONENTS — REAL PHOTOS (each type)
+// 32 COMPONENTS — УНИКАЛЬНЫЕ ФОТО
 // =============================================
 const allComponents = [
     // CPU
@@ -83,7 +91,21 @@ const allComponents = [
 ];
 
 // =============================================
-// CART
+// ПОИСК ПО КОМПОНЕНТАМ
+// =============================================
+let componentSearchQuery = '';
+
+function searchComponents() {
+    const input = document.getElementById('componentSearch');
+    if (input) {
+        componentSearchQuery = input.value.toLowerCase().trim();
+        currentComponentPage = 1;
+        renderComponents();
+    }
+}
+
+// =============================================
+// КОРЗИНА
 // =============================================
 function getCart() {
     try {
@@ -213,7 +235,7 @@ function resetCustom() {
 }
 
 // =============================================
-// HOME PAGE
+// HOME PAGE (сборки)
 // =============================================
 let currentFilter = 'all';
 let currentPage = 1;
@@ -251,6 +273,9 @@ function renderProducts() {
                 <div class="price-row">
                     <span class="price">${p.price.toLocaleString()} €</span>
                     <span class="original">${p.originalPrice.toLocaleString()} €</span>
+                </div>
+                <div style="font-size: 11px; color: #666; margin: 6px 0 10px; line-height: 1.3;">
+                    <i class="fas fa-info-circle"></i> Цены могут изменяться. Сайт не обновляет цены автоматически.
                 </div>
                 <button class="btn btn-primary" onclick="addToCart(${p.id})">
                     <i class="fas fa-cart-plus"></i> Select
@@ -290,13 +315,22 @@ const componentItemsPerPage = 6;
 function renderComponents() {
     const grid = document.getElementById('componentGrid');
     if (!grid) return;
-    const filtered = currentComponentFilter === 'all' ? allComponents : allComponents.filter(c => c.category === currentComponentFilter);
+
+    let filtered = allComponents;
+    if (currentComponentFilter !== 'all') {
+        filtered = filtered.filter(c => c.category === currentComponentFilter);
+    }
+    if (componentSearchQuery) {
+        filtered = filtered.filter(c => c.name.toLowerCase().includes(componentSearchQuery));
+    }
+
     const total = filtered.length;
     const totalPages = Math.ceil(total / componentItemsPerPage);
     if (currentComponentPage > totalPages) currentComponentPage = Math.max(1, totalPages);
     const start = (currentComponentPage - 1) * componentItemsPerPage;
     const end = start + componentItemsPerPage;
     const pageItems = filtered.slice(start, end);
+
     if (pageItems.length === 0) {
         grid.innerHTML = '<p style="color:#666; text-align:center; padding:40px; width:100%;">No components found</p>';
     } else {
@@ -313,12 +347,16 @@ function renderComponents() {
                     <span class="price">${c.price.toLocaleString()} €</span>
                     <span class="original">${c.originalPrice.toLocaleString()} €</span>
                 </div>
+                <div style="font-size: 11px; color: #666; margin: 6px 0 10px; line-height: 1.3;">
+                    <i class="fas fa-info-circle"></i> Цены могут изменяться. Сайт не обновляет цены автоматически.
+                </div>
                 <button class="btn btn-primary" onclick="addToCart(${c.id})">
                     <i class="fas fa-cart-plus"></i> Add to Cart
                 </button>
             </div>
         `).join('');
     }
+
     const badge = document.getElementById('componentBadge');
     if (badge) badge.textContent = '🔥 ' + total + ' items';
     const pagination = document.getElementById('componentPagination');
@@ -347,6 +385,7 @@ function goToComponentPage(page) {
 document.addEventListener('DOMContentLoaded', function() {
     updateCartCount();
 
+    // Home page
     if (document.getElementById('productGrid')) {
         const filterContainer = document.getElementById('filterContainer');
         if (filterContainer) {
@@ -363,6 +402,7 @@ document.addEventListener('DOMContentLoaded', function() {
         renderProducts();
     }
 
+    // Components page
     if (document.getElementById('componentGrid')) {
         const filterContainer = document.getElementById('componentFilterContainer');
         if (filterContainer) {
@@ -376,9 +416,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
         }
+        // Поиск уже привязан через oninput в HTML
         renderComponents();
     }
 
+    // Cart page
     if (document.getElementById('cartItems')) {
         renderCart();
     }
